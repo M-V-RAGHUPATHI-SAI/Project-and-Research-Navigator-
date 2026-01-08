@@ -335,9 +335,13 @@ class RAGPipeline:
 
         # Step 2: Process all documents
         print("\n2. Processing documents...")
-        all_pdf_documents = process_all_docs(
-    r"C:\Users\yaswa\Downloads\techSprint\techSprint\techSprint\content"
-)
+
+        BASE_DIR = Path(__file__).resolve().parent
+        DOCS_DIR = BASE_DIR / "content"
+
+        print(f"Document directory: {DOCS_DIR}")
+
+        all_pdf_documents = process_all_docs(DOCS_DIR)
 
         # Step 3: Split documents
         print("\n3. Splitting documents into chunks...")
